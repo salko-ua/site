@@ -1,0 +1,11 @@
+{
+  "login": {
+    "login-text": "Please, Log in",
+    "email": "Email",
+    "password": "Password",
+    "accept": "Accept"
+  },
+  "registration": "Please, Sign up",
+  "checkbox-password": "show password",
+  "have-account": "Already have account?"
+}

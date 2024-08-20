@@ -1,16 +1,17 @@
 <script>
 	import Header from '../components/header.svelte';
+	import Login from '../components/login.svelte'
 </script>
 
 
 <body>
-    <Header />
+    <Login/>
 </body>
 
 <style>
     :global(body){
         background-color: #202020;
-        color: white;
-        margin: 60px 15px 0 15px;
+        margin: 0;
+        padding: 0;
     }
 </style>
