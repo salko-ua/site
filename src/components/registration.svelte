@@ -1,40 +1,71 @@
 <script>
   	// let language = "Ukraine";
 	import { _ } from 'svelte-i18n'
+	import Checkbox from './checkbox-password.svelte';
+
 </script>
 
 
 <div class="registration">
 	<div class="registration-left-side">
 		<div class="greeting-mobile">
-			{$_('registration')}
+			{$_('registration.registration-text')}
 		</div>
 	</div>
 	<div class="registration-right-side">
 		<div class="contents">
 			<div class="form-registration">
 				<div class="greeting-pc">
-					{$_('registration')}
+					{$_('registration.registration-text')}
 				</div>
-				<div class="input-containers-block">
-					<div class="input-container ic1">
-						<input id="firstname" class="input" type="text" placeholder=" " />
-						<div class="cut"></div>
-						<label for="firstname" class="placeholder">First name</label>
-					</div>
-					<div class="input-container ic1">
-						<input id="lastname" class="input" type="text" placeholder=" " />
-						<div class="cut"></div>
-						<label for="lastname" class="placeholder">Last name</label>
-					</div>
+				<div class="together-box">
+					<div class="input-container ic2 together" id="together-1">
+					<input
+						id="first-name"
+						class="input"
+						type="text"
+						placeholder=" "
+						required
+						minlength="2"
+						maxlength="16"
+					/>
+					<div class="cut">{$_('registration.first-name')}</div>
+					<label for="first_name" class="placeholder">{$_('registration.first-name')}</label>
+				</div>
+					<div class="input-container ic2 together" id="together-2">
+					<input
+					  	id="last-name"
+					  	class="input"
+					  	type="text"
+					  	placeholder=" "
+					  	minlength="2"
+					  	maxlength="16"
+					/>
+					<div class="cut"> {$_('registration.last-name')} </div>
+					<label for="last-name" class="placeholder"> {$_('registration.last-name')} </label>
+				</div>
 				</div>
 
 				<div class="input-container ic2">
 					<input id="email" class="input" type="text" placeholder=" " />
-					<div class="cut cut-short"></div>
-					<label for="email" class="placeholder">Email</label>
+					<div class="cut">{$_('registration.email')}</div>
+					<label for="email" class="placeholder">{$_('registration.email')}</label>
 				</div>
-				<button type="button" class="submit">submit</button>
+				<div class="input-container ic2">
+					<input id="password" class="input" type="password" placeholder=" " />
+					<div class="cut ">{$_('registration.password')}</div>
+					<label for="password" class="placeholder">{$_('registration.password')}</label>
+				</div>
+				<div class="checkbox-block">
+					<div class="checkbox"><Checkbox/></div>
+					<div class="checkbox-text">
+						{$_('registration.checkbox-password')}
+					</div>
+					<div class="have-account">
+						<a href="/login">{$_('registration.have-account')}</a>
+					</div>
+				</div>
+				<button type="button" class="submit">{$_('registration.accept')}</button>
 			</div>
 		</div>
 	</div>
@@ -65,14 +96,37 @@
     	font-family: 'e-Ukraine-ultralight'; /*a name to be used later*/
     	src: url('/font/e-Ukraine/e-Ukraine-UltraLight.otf');
 	}
+	* {
+		color: #cdd6f4;
+		font-family: 'e-Ukraine-regular', monospace;
+		font-size: 14px;
+	}
+
+	.checkbox-block {
+		margin-top: 20px;
+		justify-content: center;
+	}
+	.checkbox {
+		margin-left: 20px;
+		float: left;
+	}
+	.checkbox-text {
+		margin-left: 10px;
+		margin-top: 2px;
+		float: left;
+	}
+	.have-account {
+		margin-top: 3px;
+		margin-right: 20px;
+		float: right;
+	}
     /* General styles */
     .registration {
 		background-color: #1e1e2e;
 		position: absolute;
       	width: 100%;
-        height: 100%;
+        height: min-content;
     }
-
 
 	/* Animation */
 	.input:focus ~ .cut,
@@ -90,10 +144,21 @@
 	  	color: #dc2f55;
 	}
 	.submit:active {
-		background-color: #06b;
+		background-color: #027ece;
+		font-size: 19px;
+		animation: anime 20ms ease-in;
 	}
-	/* ----- */
-
+	@keyframes anime {
+		0% {
+			background-color: #08d;
+			font-size: 18px;
+		}
+		100% {
+			background-color: #027ece;
+			font-size: 19px;
+		}
+	}
+	/*        */
 
 	.placeholder {
 		color: #65657b;
@@ -111,15 +176,10 @@
 		position: relative;
 		width: 50%;
 	}
-
-	.ic1 {
-		margin-top: 40px;
-	}
-
 	.ic2 {
 		margin-top: 30px;
+		width: 95%;
 	}
-
 	.input {
 		background-color: #303245;
 		border-radius: 12px;
@@ -131,46 +191,49 @@
 		outline: 0;
 		padding: 4px 20px 0;
 		width: 100%;
+		float: left;
 	}
-
 	.cut {
-	  background-color: #181825;
-	  border-radius: 10px;
-	  height: 20px;
-	  left: 20px;
-	  position: absolute;
-	  top: -20px;
-	  transform: translateY(0);
-	  transition: transform 200ms;
-	  width: 76px;
+		color: #181825;
+        background-color: #181825;
+		border-radius: 10px;
+		height: 20px;
+		font-size: 12px;
+		left: 20px;
+		padding-left: 10px;
+		position: absolute;
+		top: -20px;
+		transform: translateY(0);
+		transition: transform 200ms;
+		width: max-content;
+
 	}
 
-	.cut-short {
-	  width: 50px;
-	}
 
 
-    /* from 636 to 636+ */
-    @media screen and (min-width: 636px) {
+    /* from 1400 to 1400+ */
+    @media screen and (min-width: 1400px) {
 		.registration-left-side {
 			float: left;
 			width: 25%;
-			height: 80%;
+			height: 590px;
 			margin-left: 10%;
-			margin-top: 5%;
 			background-color: #11111b;
 			background-image: url("/logo/login-left-side.PNG");
 			background-repeat: round;
 			border-radius: 30px 0 0 30px;
+			margin-top: 5%;
+			margin-bottom: 5%;
 		}
 		.registration-right-side {
 			float: left;
 			width: 55%;
-			height: 80%;
+			height: max-content;
 			margin-right: 10%;
-			margin-top: 5%;
 			background-color: #181825;
 			border-radius: 0 30px 30px 0;
+			margin-top: 5%;
+			margin-bottom: 5%;
 		}
 		.contents {
 			align-content: center;
@@ -181,17 +244,10 @@
 		.form-registration {
 			width: 50%;
 			height: auto;
-			margin: 0 auto;
+			margin: 100px auto;
 			padding: 10px;
 			position: relative;
-			visibility: hidden;
-		}
-		.form-registration {
-			width: 50%;
-			height: auto;
-			margin: 0 auto;
-			padding: 10px;
-			position: relative;
+
 		}
 		.greeting-pc {
 			color: #cdd6f4;
@@ -206,11 +262,21 @@
 		.input-container {
 			height: 50px;
 		  	position: relative;
-		  	width: auto;
-			float: left;
+		  	width: 100%;
 		}
-		.input-containers-block {
+		.together-box {
+			margin-top: 20px;
 			width: 100%;
+			height: 50px;
+			justify-content: start;
+		}
+		.together {
+			margin-top: 0;
+			float: left;
+			width: 47%;
+		}
+		#together-2 {
+			margin-left: 30px;
 		}
 		.submit {
 			background-color: #08d;
@@ -221,17 +287,86 @@
 			cursor: pointer;
 			font-size: 18px;
 			height: 50px;
-			margin-top: 38px;
+			margin-top: 20px;
+			outline: 0;
+			text-align: center;
+			width: 100%;
+		}
+	}
+	/* from 636 to 1400 */
+    @media screen and (max-width: 1400px) and (min-width: 860px) {
+		.registration {
+			justify-content: center;
+		}
+		.registration-left-side {
+			float: left;
+			width: 0;
+			height: 0;
+			margin-left: 0;
+			margin-top: 0;
+			background-color: #11111b;
+			/*background-image: url("/logo/login-left-side.PNG");*/
+			/*background-repeat: round;*/
+			border-radius: 30px 0 0 30px;
+			visibility: hidden;
+		}
+		.registration-right-side {
+			width: 55%;
+			height: max-content;
+			margin: 5% auto 5% auto;
+			background-color: #181825;
+			border-radius: 30px;
+		}
+		.contents {
+			align-content: center;
+			justify-content: center;
+			height: 100%;
+			width: 100%;
+		}
+		.form-registration {
+			width: 80%;
+			height: auto;
+			margin: 0 auto;
+			padding: 10px;
+			position: relative;
+		}
+		.greeting-pc {
+			color: #cdd6f4;
+			font-size: 22px;
+			font-family: 'e-Ukraine-regular', monospace;
+			margin: 20px 0 0 0;
+			visibility: visible;
+		}
+		.greeting-mobile {
+			visibility: hidden;
+		}
+		.input-container {
+			height: 50px;
+		  	position: relative;
+		  	width: 100%;
+		}
+		.submit {
+			background-color: #08d;
+			border-radius: 12px;
+			border: 0;
+			box-sizing: border-box;
+			color: #eee;
+			cursor: pointer;
+			font-size: 18px;
+			height: 50px;
+			margin-top: 20px;
+			margin-bottom: 20px;
 			outline: 0;
 			text-align: center;
 			width: 100%;
 		}
     }
-    /* from 636 to 636-  */
-    @media screen and (max-width: 636px) {
+    /* from 831 to 831-  */
+    @media screen and (max-width: 860px) {
 		.registration-left-side {
 			width: 90%;
 			height: 10%;
+			padding: 20px 0;
 			margin-left: 5%;
 			margin-top: 10%;
 			background-color: #11111b;
@@ -241,10 +376,11 @@
 		}
 		.registration-right-side {
 			width: 90%;
-			height: 80%;
+			height: max-content;
 			margin-left: 5%;
 			background-color: #181825;
 			border-radius: 0 0 20px 20px;
+			margin-bottom: 10%;
 		}
 		.contents {
             height: 100%;
@@ -254,7 +390,7 @@
 		}
 		.greeting-mobile {
 			color: #cdd6f4;
-			font-size: 16px;
+			font-size: 18px;
 			font-family: 'e-Ukraine-regular', monospace;
 			margin: 0;
 		}
@@ -278,10 +414,23 @@
 			cursor: pointer;
 			font-size: 18px;
 			height: 50px;
-			margin-top: 38px;
 			outline: 0;
 			text-align: center;
 			width: 90%;
+			margin-bottom: 30px;
+		}
+		.checkbox-block, .checkbox, .checkbox-text {
+			visibility: hidden;
+			margin: 0;
+		}
+		.checkbox, .checkbox-text {
+			height: 0;
+		}
+		.have-account {
+			visibility: visible;
+			margin-right: 8%;
+			margin-top: 15px;
+			margin-bottom: 15px;
 		}
     }
 </style>

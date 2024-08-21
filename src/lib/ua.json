@@ -2,10 +2,19 @@
   "login": {
     "login-text": "Будь ласка, увійдіть",
     "email": "Пошта",
-    "password": "Парольчик",
-    "accept": "Підтвердити"
+    "password": "Пароль",
+    "accept": "Підтвердити",
+    "have-account": "Не маєте акаунту?",
+    "checkbox-password": "показати пароль"
   },
-  "registration": "Будь ласка, зареєструйтесь",
-  "checkbox-password": "показати пароль",
-  "have-account": "Вже маєте акаунт?"
+  "registration": {
+    "registration-text": "Будь ласка, зареєструйтесь",
+    "email": "Пошта",
+    "password": "Пароль",
+    "first-name": "І'мя",
+    "last-name": "Прізвище",
+    "accept": "Підтвердити",
+    "have-account": "Вже маєте акаунт?",
+    "checkbox-password": "показати пароль"
+  }
 }

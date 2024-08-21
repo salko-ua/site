@@ -3,9 +3,18 @@
     "login-text": "Please, Log in",
     "email": "Email",
     "password": "Password",
-    "accept": "Accept"
+    "accept": "Accept",
+    "have-account": "Haven`t account?",
+    "checkbox-password": "show password"
   },
-  "registration": "Please, Sign up",
-  "checkbox-password": "show password",
-  "have-account": "Already have account?"
+  "registration": {
+    "registration-text": "Please, Sign up",
+    "email": "Email",
+    "password": "Password",
+    "first-name": "First name",
+    "last-name": "Last name",
+    "accept": "Accept",
+    "have-account": "Already have account?",
+    "checkbox-password": "show password"
+  }
 }

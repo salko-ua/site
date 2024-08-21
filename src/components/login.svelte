@@ -20,21 +20,21 @@
 				</div>
 				<div class="input-container ic2">
 					<input id="email" class="input" type="text" placeholder=" " />
-					<div class="cut"></div>
+					<div class="cut">{$_('login.email')}</div>
 					<label for="email" class="placeholder">{$_('login.email')}</label>
 				</div>
 				<div class="input-container ic2">
 					<input id="password" class="input" type="password" placeholder=" " />
-					<div class="cut "></div>
+					<div class="cut ">{$_('login.password')}</div>
 					<label for="password" class="placeholder">{$_('login.password')}</label>
 				</div>
 				<div class="checkbox-block">
 					<div class="checkbox"><Checkbox/></div>
 					<div class="checkbox-text">
-						{$_('checkbox-password')}
+						{$_('login.checkbox-password')}
 					</div>
 					<div class="have-account">
-						<a href="#">{$_('have-account')}</a>
+						<a href="/registration">{$_('login.have-account')}</a>
 					</div>
 				</div>
 				<button type="button" class="submit">{$_('login.accept')}</button>
@@ -97,7 +97,7 @@
 		background-color: #1e1e2e;
 		position: absolute;
       	width: 100%;
-        height: 100%;
+        height: min-content;
     }
 
 	/* Animation */
@@ -159,15 +159,19 @@
 	}
 
 	.cut {
-	  background-color: #181825;
-	  border-radius: 10px;
-	  height: 20px;
-	  left: 20px;
-	  position: absolute;
-	  top: -20px;
-	  transform: translateY(0);
-	  transition: transform 200ms;
-	  width: fit-content;
+		color: #181825;
+        background-color: #181825;
+		border-radius: 10px;
+		height: 20px;
+		font-size: 12px;
+		left: 20px;
+		padding-left: 10px;
+		position: absolute;
+		top: -20px;
+		transform: translateY(0);
+		transition: transform 200ms;
+		width: max-content;
+
 	}
 
 
@@ -179,20 +183,22 @@
 			width: 25%;
 			height: 593px;
 			margin-left: 10%;
-			margin-top: 5%;
 			background-color: #11111b;
 			background-image: url("/logo/login-left-side.PNG");
 			background-repeat: round;
 			border-radius: 30px 0 0 30px;
+			margin-top: 5%;
+			margin-bottom: 5%;
 		}
 		.login-right-side {
 			float: left;
 			width: 55%;
 			height: max-content;
 			margin-right: 10%;
-			margin-top: 5%;
 			background-color: #181825;
 			border-radius: 0 30px 30px 0;
+			margin-top: 5%;
+			margin-bottom: 5%;
 		}
 		.contents {
 			align-content: center;
@@ -239,7 +245,7 @@
 		}
     }
 	/* from 636 to 1400 */
-    @media screen and (max-width: 1400px) and (min-width: 831px) {
+    @media screen and (max-width: 1400px) and (min-width: 860px) {
 		.login {
 			justify-content: center;
 		}
@@ -256,10 +262,9 @@
 			visibility: hidden;
 		}
 		.login-right-side {
-
 			width: 55%;
 			height: max-content;
-			margin: 5% auto auto auto;
+			margin: 5% auto 5% auto;
 			background-color: #181825;
 			border-radius: 30px;
 		}
@@ -309,7 +314,7 @@
 
     }
     /* from 831 to 831-  */
-    @media screen and (max-width: 831px) {
+    @media screen and (max-width: 860px) {
 		.login-left-side {
 			width: 90%;
 			height: 10%;
@@ -326,6 +331,7 @@
 			margin-left: 5%;
 			background-color: #181825;
 			border-radius: 0 0 20px 20px;
+			margin-bottom: 10%;
 		}
 		.contents {
             height: 100%;
