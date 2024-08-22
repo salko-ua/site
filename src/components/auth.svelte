@@ -2,11 +2,11 @@
   	// let language = "Ukraine";
 	import { _ } from 'svelte-i18n'
 	import Checkbox from './checkbox-password.svelte';
-
+	export let is_used = "";
 </script>
 
-
-<div class="login">
+{#if (is_used === "login")}
+	<div class="login">
 	<div class="login-left-side">
 		<div class="greeting-mobile">
 			{$_('login.login-text')}
@@ -42,38 +42,78 @@
 		</div>
 	</div>
 </div>
+{:else if (is_used === "registration")}
+	<div class="registration">
+		<div class="registration-left-side">
+			<div class="greeting-mobile">
+				{$_('registration.registration-text')}
+			</div>
+		</div>
+		<div class="registration-right-side">
+			<div class="contents">
+				<div class="form-registration">
+					<div class="greeting-pc">
+						{$_('registration.registration-text')}
+					</div>
+					<div class="together-box">
+						<div class="input-container ic2 together" id="together-1">
+						<input
+							id="first-name"
+							class="input"
+							type="text"
+							placeholder=" "
+							required
+							minlength="2"
+							maxlength="16"
+						/>
+						<div class="cut">{$_('registration.first-name')}</div>
+						<label for="first_name" class="placeholder">{$_('registration.first-name')}</label>
+					</div>
+						<div class="input-container ic2 together" id="together-2">
+						<input
+							id="last-name"
+							class="input"
+							type="text"
+							placeholder=" "
+							minlength="2"
+							maxlength="16"
+						/>
+						<div class="cut"> {$_('registration.last-name')} </div>
+						<label for="last-name" class="placeholder"> {$_('registration.last-name')} </label>
+					</div>
+					</div>
+
+					<div class="input-container ic2">
+						<input id="email" class="input" type="text" placeholder=" " />
+						<div class="cut">{$_('registration.email')}</div>
+						<label for="email" class="placeholder">{$_('registration.email')}</label>
+					</div>
+					<div class="input-container ic2">
+						<input id="password" class="input" type="password" placeholder=" " />
+						<div class="cut ">{$_('registration.password')}</div>
+						<label for="password" class="placeholder">{$_('registration.password')}</label>
+					</div>
+					<div class="checkbox-block">
+						<div class="checkbox"><Checkbox/></div>
+						<div class="checkbox-text">
+							{$_('registration.checkbox-password')}
+						</div>
+						<div class="have-account">
+							<a href="/login">{$_('registration.have-account')}</a>
+						</div>
+					</div>
+					<button type="button" class="submit">{$_('registration.accept')}</button>
+				</div>
+			</div>
+		</div>
+	</div>
+{/if}
 
 <style>
-	@font-face {
-    	font-family: 'e-Ukraine-medium'; /*a name to be used later*/
-    	src: url('/font/e-Ukraine/e-Ukraine-Medium.otf');
-	}
-	@font-face {
-    	font-family: 'e-Ukraine-bold'; /*a name to be used later*/
-    	src: url('/font/e-Ukraine/e-Ukraine-Bold.otf');
-	}
-	@font-face {
-    	font-family: 'e-Ukraine-light'; /*a name to be used later*/
-    	src: url('/font/e-Ukraine/e-Ukraine-Light.otf');
-	}
-	@font-face {
-    	font-family: 'e-Ukraine-regular'; /*a name to be used later*/
-    	src: url('/font/e-Ukraine/e-Ukraine-Regular.otf');
-	}
-	@font-face {
-    	font-family: 'e-Ukraine-thin'; /*a name to be used later*/
-    	src: url('/font/e-Ukraine/e-Ukraine-Thin.otf');
-	}
-	@font-face {
-    	font-family: 'e-Ukraine-ultralight'; /*a name to be used later*/
-    	src: url('/font/e-Ukraine/e-Ukraine-UltraLight.otf');
-	}
 	* {
 		color: #cdd6f4;
 		font-family: 'e-Ukraine-regular', monospace;
-		font-size: 14px;
 	}
-
 	.checkbox-block {
 		margin-top: 20px;
 		justify-content: center;
@@ -92,12 +132,14 @@
 		margin-right: 20px;
 		float: right;
 	}
-    /* General styles */
-    .login {
+
+	/* General styles */
+    .login, .registration {
 		background-color: #1e1e2e;
 		position: absolute;
       	width: 100%;
         height: min-content;
+		justify-content: center;
     }
 
 	/* Animation */
@@ -120,7 +162,6 @@
 	}
 	/* ----- */
 
-
 	.placeholder {
 		color: #65657b;
 		font-family: sans-serif;
@@ -137,13 +178,10 @@
 		position: relative;
 		width: 50%;
 	}
-
-
 	.ic2 {
 		margin-top: 30px;
 		width: 95%;
 	}
-
 	.input {
 		background-color: #303245;
 		border-radius: 12px;
@@ -157,7 +195,6 @@
 		width: 100%;
 		float: left;
 	}
-
 	.cut {
 		color: #181825;
         background-color: #181825;
@@ -173,46 +210,45 @@
 		width: max-content;
 
 	}
+	.contents {
+		align-content: center;
+		justify-content: center;
+		height: 100%;
+		width: 100%;
+	}
 
 
-
-    /* from 1400 to 1400+ */
-    @media screen and (min-width: 1400px) {
-		.login-left-side {
-			float: left;
-			width: 25%;
-			height: 593px;
-			margin-left: 10%;
-			background-color: #11111b;
-			background-image: url("/logo/login-left-side.PNG");
-			background-repeat: round;
-			border-radius: 30px 0 0 30px;
-			margin-top: 5%;
-			margin-bottom: 5%;
+    /* Everyone */
+	@media screen and (min-width: 861px) {
+		.login-left-side, .registration-left-side {
+			visibility: hidden;
+			height: 0;
 		}
-		.login-right-side {
-			float: left;
-			width: 55%;
+		.login-right-side, .registration-right-side{
+			width: 70%;
 			height: max-content;
-			margin-right: 10%;
+			margin: 5% auto 5% auto;
 			background-color: #181825;
-			border-radius: 0 30px 30px 0;
-			margin-top: 5%;
-			margin-bottom: 5%;
+			border-radius: 30px;
 		}
-		.contents {
-			align-content: center;
-			justify-content: center;
-			height: 100%;
+		.input-container {
+			height: 50px;
+			position: relative;
 			width: 100%;
 		}
-		.form-login {
-			width: 50%;
-			height: auto;
-			margin: 136px auto;
-			padding: 10px;
-			position: relative;
-
+		.submit {
+			background-color: #08d;
+			border-radius: 12px;
+			border: 0;
+			box-sizing: border-box;
+			color: #eee;
+			cursor: pointer;
+			font-size: 18px;
+			height: 50px;
+			margin-top: 20px;
+			outline: 0;
+			text-align: center;
+			width: 100%;
 		}
 		.greeting-pc {
 			color: #cdd6f4;
@@ -224,100 +260,14 @@
 		.greeting-mobile {
 			visibility: hidden;
 		}
-		.input-container {
-			height: 50px;
-		  	position: relative;
-		  	width: 100%;
-		}
-		.submit {
-			background-color: #08d;
-			border-radius: 12px;
-			border: 0;
-			box-sizing: border-box;
-			color: #eee;
-			cursor: pointer;
-			font-size: 18px;
-			height: 50px;
-			margin-top: 20px;
-			outline: 0;
-			text-align: center;
-			width: 100%;
-		}
-    }
-	/* from 636 to 1400 */
-    @media screen and (max-width: 1400px) and (min-width: 860px) {
-		.login {
-			justify-content: center;
-		}
-		.login-left-side {
-			float: left;
-			width: 0;
-			height: 0;
-			margin-left: 0;
-			margin-top: 0;
-			background-color: #11111b;
-			/*background-image: url("/logo/login-left-side.PNG");*/
-			/*background-repeat: round;*/
-			border-radius: 30px 0 0 30px;
-			visibility: hidden;
-		}
-		.login-right-side {
-			width: 55%;
-			height: max-content;
-			margin: 5% auto 5% auto;
-			background-color: #181825;
-			border-radius: 30px;
-		}
-		.contents {
-			align-content: center;
-			justify-content: center;
-			height: 100%;
-			width: 100%;
-		}
-		.form-login {
-			width: 80%;
-			height: auto;
-			margin: 0 auto;
-			padding: 10px;
-			position: relative;
-		}
-		.greeting-pc {
-			color: #cdd6f4;
-			font-size: 22px;
-			font-family: 'e-Ukraine-regular', monospace;
-			margin: 20px 0 0 0;
-			visibility: visible;
-		}
-		.greeting-mobile {
-			visibility: hidden;
-		}
-		.input-container {
-			height: 50px;
-		  	position: relative;
-		  	width: 100%;
-		}
-		.submit {
-			background-color: #08d;
-			border-radius: 12px;
-			border: 0;
-			box-sizing: border-box;
-			color: #eee;
-			cursor: pointer;
-			font-size: 18px;
-			height: 50px;
-			margin-top: 20px;
-			margin-bottom: 20px;
-			outline: 0;
-			text-align: center;
-			width: 100%;
-		}
 
     }
-    /* from 831 to 831-  */
-    @media screen and (max-width: 860px) {
-		.login-left-side {
-			width: 90%;
+    /* from 861 to 861-  */
+    @media screen and (max-width: 861px) {
+		.login-left-side, .registration-left-side {
+			width: 80%;
 			height: 10%;
+			padding: 20px 5%;
 			margin-left: 5%;
 			margin-top: 10%;
 			background-color: #11111b;
@@ -325,29 +275,13 @@
 			align-content: center;
 			border-radius: 20px 20px 0 0;
 		}
-		.login-right-side {
+		.login-right-side, .registration-right-side {
 			width: 90%;
 			height: max-content;
 			margin-left: 5%;
 			background-color: #181825;
 			border-radius: 0 0 20px 20px;
 			margin-bottom: 10%;
-		}
-		.contents {
-            height: 100%;
-            width: 100%;
-			text-align: center;
-			justify-content: center;
-		}
-		.greeting-mobile {
-			color: #cdd6f4;
-			font-size: 18px;
-			font-family: 'e-Ukraine-regular', monospace;
-			margin: 0;
-		}
-		.greeting-pc {
-			height: 0;
-			visibility: hidden;
 		}
 		.input-container {
 			height: 50px;
@@ -367,8 +301,20 @@
 			height: 50px;
 			outline: 0;
 			text-align: center;
-			width: 90%;
-			margin-bottom: 30px;
+		  	width: 90%;
+			margin-left: 4%;
+			margin-right: 4%;
+			margin-bottom: 40px;
+		}
+		.greeting-mobile {
+			color: #cdd6f4;
+			font-size: 18px;
+			font-family: 'e-Ukraine-regular', monospace;
+			margin: 0;
+		}
+		.greeting-pc {
+			height: 0;
+			visibility: hidden;
 		}
 		.checkbox-block, .checkbox, .checkbox-text {
 			visibility: hidden;
@@ -380,8 +326,67 @@
 		.have-account {
 			visibility: visible;
 			margin-right: 8%;
-			margin-top: 15px;
-			margin-bottom: 15px;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+
+    }
+
+
+	/* Login */
+    /* from 861 to 861+ */
+    @media screen and (min-width: 861px) {
+		.form-login {
+			width: 80%;
+			margin: 75px auto;
+			position: relative;
+			justify-content: center;
 		}
     }
+    /* from 831 to 831-  */
+    @media screen and (max-width: 861px) {
+		.form-login {
+			width: 100%;
+			margin: auto;
+			position: relative;
+			justify-content: center;
+		}
+	}
+
+	/* Registration */
+	/* from 861 to 861+ */
+    @media screen and (min-width: 861px) {
+		.form-registration {
+			width: 80%;
+			max-width: 100%;
+			margin: 75px auto;
+			position: relative;
+			justify-content: center;
+		}
+		.together-box {
+			margin-top: 20px;
+			width: 100%;
+			height: 50px;
+		}
+		.together {
+			margin-top: 0;
+			float: left;
+			width: 48%;
+		}
+		#together-2 {
+			margin-left: 4%;
+		}
+
+	}
+    /* from 861 to 861-  */
+    @media screen and (max-width: 861px) {
+		.form-registration {
+			width: 100%;
+			margin: auto;
+			position: relative;
+			justify-content: center;
+		}
+	}
+
+
 </style>

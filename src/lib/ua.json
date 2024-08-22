@@ -11,10 +11,10 @@
     "registration-text": "Будь ласка, зареєструйтесь",
     "email": "Пошта",
     "password": "Пароль",
-    "first-name": "І'мя",
+    "first-name": "Ім'я",
     "last-name": "Прізвище",
     "accept": "Підтвердити",
-    "have-account": "Вже маєте акаунт?",
+    "have-account": "Маєте акаунт?",
     "checkbox-password": "показати пароль"
   }
 }

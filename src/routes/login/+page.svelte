@@ -1,8 +1,10 @@
 <script>
-    import Login from "../../components/login.svelte";
+    import Auth from "../../components/auth.svelte";
 </script>
 
-
+<head>
+    <title>Login</title>
+</head>
 <body>
-    <Login/>
+    <Auth is_used="login"/>
 </body>

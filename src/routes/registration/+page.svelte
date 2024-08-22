@@ -1,8 +1,10 @@
 <script>
-    import Registration from "../../components/registration.svelte";
+    import Auth from "../../components/auth.svelte";
 </script>
 
-
+<head>
+    <title>Registration</title>
+</head>
 <body>
-    <Registration/>
+    <Auth is_used="registration"/>
 </body>
