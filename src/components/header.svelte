@@ -14,11 +14,11 @@
     /* General styles */
 
     /* from 636 to 636+ */
-    @media screen and (min-width: 636px) {
+    @media screen and (min-width: 861px) {
 
     }
     /* from 636 to 636-  */
-    @media screen and (max-width: 636px) {
+    @media screen and (max-width: 861px) {
 
     }
 </style>

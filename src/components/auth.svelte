@@ -204,7 +204,7 @@
 
 
     /* Everyone */
-	@media screen and (min-width: 861px) {
+	  @media screen and (min-width: 861px) {
 		.login-left-side, .registration-left-side {
 			visibility: hidden;
 			height: 0;
@@ -320,7 +320,7 @@
     }
 
 
-	/* Login */
+	  /* Login */
     /* from 861 to 861+ */
     @media screen and (min-width: 861px) {
 		.form-login {
@@ -340,8 +340,8 @@
 		}
 	}
 
-	/* Registration */
-	/* from 861 to 861+ */
+		/* Registration */
+		/* from 861 to 861+ */
     @media screen and (min-width: 861px) {
 		.form-registration {
 			width: 80%;
