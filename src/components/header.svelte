@@ -4,6 +4,12 @@
 
 
 <div class="header">
+	<div class="home left header-stuff">
+			Home
+	</div>
+	<div class="projects left header-stuff">
+			Projects
+	</div>
 	<div class="language">
 		 	 <Language/>
 	</div>
@@ -28,8 +34,18 @@
 						background-color: #11111b;
 						border-radius: 20px;
 				}
+				.header-stuff {
+						color: #cdd6f4;
+						height: 100%;
+						align-content: center;
+						font-family: 'e-Ukraine-regular', monospace;
+						margin: 0 40px;
+				}
 				.language {
 						float: right;
+				}
+				.left {
+						float: left;
 				}
 
     }
