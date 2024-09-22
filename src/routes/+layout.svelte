@@ -9,12 +9,12 @@
 
 
 <body>
-	<Header/>
-	{#if $isLoading}
-        Please wait...
-    {:else}
+
+		{#if $isLoading}
+				Please wait...
+		{:else}
 		<slot/>
-    {/if}
+		{/if}
 </body>
 
 
