@@ -1,5 +1,6 @@
 {
   "login": {
+    "login": "Увійти",
     "login-text": "Будь ласка, увійдіть",
     "email": "Пошта",
     "password": "Пароль",
@@ -8,6 +9,7 @@
     "checkbox-password": "показати пароль"
   },
   "registration": {
+    "registration": "Зареєструватись",
     "registration-text": "Будь ласка, зареєструйтесь",
     "email": "Пошта",
     "password": "Пароль",

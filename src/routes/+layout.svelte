@@ -2,6 +2,7 @@
 		import Header from '../components/header.svelte';
 		import { isLoading, locale } from 'svelte-i18n';
 		import * as _ from "$lib";
+		import Language from '../components/switch-language.svelte';
 		locale.set('ua')
 		locale.subscribe(() => console.log('locale change'))
 </script>
@@ -14,11 +15,30 @@
 				Please wait...
 		{:else}
 		<slot/>
+		<div class="language">
+			<Language/>
+		</div>
+		<div class="header">
+			<Header/>
+		</div>
 		{/if}
 </body>
 
 
 <style>
+	.language {
+        position: fixed;
+        bottom: 2%;
+        left: 120px;
+        z-index: 4;
+    }
+    .header {
+        position: fixed;
+        bottom: 2%;
+        left: 20px;
+        z-index: 4;
+    }
+
 	@font-face {
     	font-family: 'e-Ukraine-medium'; /*a name to be used later*/
     	src: url('/src/assets/font/e-Ukraine/e-Ukraine-Medium.otf');

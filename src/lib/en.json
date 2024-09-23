@@ -1,5 +1,6 @@
 {
   "login": {
+    "login": "Login",
     "login-text": "Please, Log in",
     "email": "Email",
     "password": "Password",
@@ -8,6 +9,7 @@
     "checkbox-password": "show password"
   },
   "registration": {
+    "registration": "Registration",
     "registration-text": "Please, Sign up",
     "email": "Email",
     "password": "Password",
