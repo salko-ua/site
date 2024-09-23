@@ -2,20 +2,21 @@
 	import { _ } from 'svelte-i18n'
 
 	function openNav() {
-		let x = document.getElementById("myNav")
-		if (x !== null) {
+		let header = document.getElementById("myNav")
+		if (header !== null) {
 			if (window.innerWidth > 861) {
-				x.style.width = "30%";
+				header.style.width = "30%";
 			} else if (window.innerWidth < 861){
-				x.style.width = "100%";
+				header.style.width = "100%";
 			}
 		}
+
 	}
 
 	function closeNav() {
-			let x = document.getElementById("myNav")
-		if (x !== null) {
-			x.style.width = "0%";
+		let header = document.getElementById("myNav")
+		if (header !== null) {
+			header.style.width = "0%";
 		}
 	}
 
@@ -24,7 +25,7 @@
 
 <div id="myNav" class="overlay">
 		<button class="close_button" on:click={closeNav}>&times;</button>
-		<div class="overlay-content">
+		<div class="overlay-content" id="links">
 			<a href="/auth.svelte" on:click={closeNav}>Головна</a>
 			<a href="/auth.svelte" on:click={closeNav}>Про мене</a>
 			<a href="/login" on:click={closeNav}>{$_('login.login')}</a>
