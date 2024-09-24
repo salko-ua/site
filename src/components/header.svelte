@@ -1,5 +1,6 @@
 <script>
 	import { _ } from 'svelte-i18n'
+	import menu_img from '$lib/assets/logo/menu.svg';
 
 	function openNav() {
 		let header = document.getElementById("myNav")
@@ -34,7 +35,7 @@
 
 </div>
 
-<button on:click={openNav} class="open_button"><img src="src/assets/logo/menu.svg" alt="Menu"></button>
+<button on:click={openNav} class="open_button"><img src={menu_img} alt="Menu"/></button>
 
 <style>
 	.overlay {
