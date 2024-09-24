@@ -34,7 +34,7 @@
 
 </div>
 
-<button on:click={openNav} class="open_button"><img src="/src/assets/logo/menu.svg" alt="Menu"></button>
+<button on:click={openNav} class="open_button"><img src="src/assets/logo/menu.svg" alt="Menu"></button>
 
 <style>
 	.overlay {
@@ -46,9 +46,10 @@
 		left: 0;
 		top: 0;
 		background-color: rgb(24, 24, 37);
-		background-color: rgba(24,24,37, 0.9);
+		background-color: rgba(24,24,37, 0.4);
 		overflow-x: hidden;
 		transition: 0.5s;
+		backdrop-filter: blur(10px);
 	}
 
 	.overlay-content {
