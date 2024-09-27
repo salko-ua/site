@@ -1,6 +1,7 @@
 <script>
 	import { _ } from 'svelte-i18n'
 	import menu_img from '$lib/assets/logo/menu.svg';
+	import account_image from '$lib/assets/logo/account_image.svg'
 
 	function openNav() {
 		let header = document.getElementById("myNav")
@@ -25,7 +26,13 @@
 
 
 <div id="myNav" class="overlay">
-		<button class="close_button" on:click={closeNav}>&times;</button>
+		<div class="top_information">
+			<img class="account_image" src={account_image} alt="Profile"/>
+			<span class="account_name">
+				SALKO-UA
+			</span>
+			<button class="close_button" on:click={closeNav}>&times;</button>
+		</div>
 		<div class="overlay-content" id="links">
 			<a href="/auth.svelte" on:click={closeNav}>Головна</a>
 			<a href="/auth.svelte" on:click={closeNav}>Про мене</a>
@@ -74,7 +81,7 @@
 		color: #f1f1f1;
 	}
 
-	.overlay .close_button {
+	.overlay {
 		position: absolute;
 		top: 20px;
 		right: 45px;
@@ -83,11 +90,6 @@
 		border: none;
 		color: white;
 	}
-
-	.close_button:active {
-		color: #cecece;
-	}
-
 	.open_button {
 		border: transparent 0;
 		font-size: 36px;
@@ -104,6 +106,32 @@
 		height: 28px;
 		width: 50px;
 		border-radius: 5px;
+	}
+	.top_information{
+		width: 100%;
+	}
+	.account_image {
+		height: 50px;
+		width: 50px;
+
+	}
+	.account_name {
+		color: white;
+		font-size: 24px;
+		border: none;
+		position: absolute;
+	}
+	.close_button {
+		position: absolute;
+		top: 20px;
+		right: 45px;
+		font-size: 60px;
+		background-color: transparent;
+		border: none;
+		color: white;
+	}
+	.close_button:active {
+		color: #cecece;
 	}
 
 	@media screen and (max-height: 450px) {

@@ -41,27 +41,27 @@
 
 	@font-face {
     	font-family: 'e-Ukraine-medium'; /*a name to be used later*/
-    	src: url('/src/lib/assets/font/e-Ukraine/e-Ukraine-Medium.otf');
+    	src: url('$lib/assets/font/e-Ukraine/e-Ukraine-Medium.otf');
 	}
 	@font-face {
     	font-family: 'e-Ukraine-bold'; /*a name to be used later*/
-    	src: url('/src/lib/assets/font/e-Ukraine/e-Ukraine-Bold.otf');
+    	src: url('$lib/assets/font/e-Ukraine/e-Ukraine-Bold.otf');
 	}
 	@font-face {
     	font-family: 'e-Ukraine-light'; /*a name to be used later*/
-    	src: url('/src/lib/assets/font/e-Ukraine/e-Ukraine-Light.otf');
+    	src: url('$lib/assets/font/e-Ukraine/e-Ukraine-Light.otf');
 	}
 	@font-face {
     	font-family: 'e-Ukraine-regular'; /*a name to be used later*/
-    	src: url('/src/lib/assets/font/e-Ukraine/e-Ukraine-Regular.otf');
+    	src: url('$lib/assets/font/e-Ukraine/e-Ukraine-Regular.otf');
 	}
 	@font-face {
     	font-family: 'e-Ukraine-thin'; /*a name to be used later*/
-    	src: url('/src/lib/assets/font/e-Ukraine/e-Ukraine-Thin.otf');
+    	src: url('$lib/assets/font/e-Ukraine/e-Ukraine-Thin.otf');
 	}
 	@font-face {
     	font-family: 'e-Ukraine-ultralight'; /*a name to be used later*/
-    	src: url('/src/lib/assets/font/e-Ukraine/e-Ukraine-UltraLight.otf');
+    	src: url('$lib/assets/font/e-Ukraine/e-Ukraine-UltraLight.otf');
 	}
     :global(body){
         background-color: #1e1e2e;
