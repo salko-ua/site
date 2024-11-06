@@ -7,7 +7,7 @@
 		let header = document.getElementById("myNav")
 		if (header !== null) {
 			if (window.innerWidth > 861) {
-				header.style.width = "30%";
+				header.style.width = "300px";
 			} else if (window.innerWidth < 861){
 				header.style.width = "100%";
 			}
@@ -26,16 +26,15 @@
 
 
 <div id="myNav" class="overlay">
-		<div class="top_information">
-			<img class="account_image" src={account_image} alt="Profile"/>
-			<span class="account_name">
-				SALKO-UA
-			</span>
+		<div class="top_panel">
+			<div class="account_image_div">
+				<img class="account_image" src={account_image} alt="Profile"/>
+			</div>
 			<button class="close_button" on:click={closeNav}>&times;</button>
 		</div>
 		<div class="overlay-content" id="links">
-			<a href="/auth.svelte" on:click={closeNav}>Головна</a>
-			<a href="/auth.svelte" on:click={closeNav}>Про мене</a>
+			<a href="/" on:click={closeNav}>Головна</a>
+			<a href="/about_me" on:click={closeNav}>Про мене</a>
 			<a href="/login" on:click={closeNav}>{$_('login.login')}</a>
 			<a href="/registration" on:click={closeNav}>{$_('registration.registration')}</a>
 		</div>
@@ -54,20 +53,21 @@
 		left: 0;
 		top: 0;
 		background-color: rgb(24, 24, 37);
-		background-color: rgba(24,24,37, 0.4);
+		background-color: rgba(24,24,37, 0.6);
 		overflow-x: hidden;
 		transition: 0.5s;
-		backdrop-filter: blur(10px);
+		backdrop-filter: blur(20px);
 	}
 
 	.overlay-content {
-		position: relative;
-		top: 25%;
 		width: 100%;
-		text-align: center;
-		margin-top: 30px;
+		float: left;
+		text-align: left;
+		position: relative;
+		top: 20px;
+		margin-left: 20px;
+		margin-right: 20px;
 	}
-
 	.overlay a {
 		padding: 8px;
 		text-decoration: none;
@@ -75,21 +75,15 @@
 		color: #818181;
 		display: block;
 		transition: 0.3s;
-	}
 
+	}
 	.overlay a:hover, .overlay a:focus {
 		color: #f1f1f1;
+		background-color: rgba(17, 17, 27, 0.41);
 	}
 
-	.overlay {
-		position: absolute;
-		top: 20px;
-		right: 45px;
-		font-size: 60px;
-		background-color: transparent;
-		border: none;
-		color: white;
-	}
+
+
 	.open_button {
 		border: transparent 0;
 		font-size: 36px;
@@ -102,36 +96,50 @@
 		font-size: 37px;
 		background-color: rgba(30, 30, 46, 0.33);
 	}
+
 	img {
 		height: 28px;
 		width: 50px;
 		border-radius: 5px;
 	}
-	.top_information{
+
+	.top_panel {
 		width: 100%;
+		height: 50px;
+		float: left;
+		align-content: center;
+		margin-top: 40px;
 	}
 	.account_image {
 		height: 50px;
 		width: 50px;
+	}
+	.account_image_div {
+		float: left;
+		height: 100%;
+		margin-left: 30px;
+	}
 
-	}
-	.account_name {
-		color: white;
-		font-size: 24px;
-		border: none;
-		position: absolute;
-	}
 	.close_button {
-		position: absolute;
-		top: 20px;
-		right: 45px;
-		font-size: 60px;
+		float: right;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 50px;
+		width: 50px;
+		font-size: 48px;
 		background-color: transparent;
 		border: none;
-		color: white;
+		color: #818181;
+		padding: 0;
+		margin-right: 30px;
+
 	}
 	.close_button:active {
-		color: #cecece;
+		color: #f1f1f1;
+	}
+	.close_button:hover, .close_button:focus {
+		color: rgba(241, 241, 241, 0.65);
 	}
 
 	@media screen and (max-height: 450px) {
