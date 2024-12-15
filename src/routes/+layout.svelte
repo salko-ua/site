@@ -15,29 +15,18 @@
 				Please wait...
 		{:else}
 		<slot/>
-		<div class="language">
-			<Language/>
-		</div>
-		<div class="header">
-			<Header/>
-		</div>
+<!--		<div class="language">-->
+<!--			<Language/>-->
+<!--		</div>-->
+<!--		<div class="header">-->
+<!--			<Header/>-->
+<!--		</div>-->
 		{/if}
 </body>
 
 
 <style>
-	.language {
-        position: fixed;
-        bottom: 2%;
-        left: 120px;
-        z-index: 4;
-    }
-    .header {
-        position: fixed;
-        bottom: 2%;
-        left: 20px;
-        z-index: 4;
-    }
+
 
 	@font-face {
     	font-family: 'e-Ukraine-medium'; /*a name to be used later*/
