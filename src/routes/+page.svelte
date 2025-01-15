@@ -1,16 +1,14 @@
 <script>
-import Header from '../components/header.svelte';
-import Language from '../components/switch-language.svelte';
+    import Auth from "../../components/auth.svelte";
+    import Language from '../../components/switch-language.svelte';
 </script>
 
 <head>
-    <title>Header</title>
+    <title>Registration</title>
 </head>
 <body>
-
-
+    <Auth is_used="registration"/>
 </body>
 
 <style>
-
 </style>
