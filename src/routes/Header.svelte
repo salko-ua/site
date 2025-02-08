@@ -6,7 +6,7 @@
 <AppBar
 	classes="fixed top-0 z-10 p-2 pl-40 pr-40 border-b-4 border-b-surface-900"
 	padding="px-4"
-	background="backdrop-blur bg-surface-950/30"
+	background="backdrop-blur bg-surface-950"
 	leadSpaceX=""
 	leadClasses="items-center"
 	trailSpaceX=""
