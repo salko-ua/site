@@ -2,23 +2,16 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="/src/lib/assets/logo/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>DFGit a</title>
-		<!-- Simple Analytics - 100% privacy-first analytics -->
-		<script async defer src="https://simpleanal.perchun.it/latest.js"></script>
-		<noscript>
-			<img
-				src="https://simpleanal.perchun.it/noscript.gif"
-				alt=""
-				referrerpolicy="no-referrer-when-downgrade"
-			/>
-		</noscript>
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<title>site</title>
 		%sveltekit.head%
 	</head>
-	<body data-sveltekit-preload-data="hover">
+	<body
+		data-theme="concord"
+		data-sveltekit-preload-data="hover"
+		class="bg-color-background text-color-text h-fit"
+	>
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>
-
-
