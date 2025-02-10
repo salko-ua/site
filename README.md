@@ -4,6 +4,3 @@
 
 My website.
 
-## Thanks
-
-This project was generated with [svelte-template](https://github.com/PerchunPak/svelte-template).
